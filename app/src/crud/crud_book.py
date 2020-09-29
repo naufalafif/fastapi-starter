@@ -8,7 +8,7 @@ from app.src.database.models.books import Book
 from app.src.schema.books_schema import BookCreate, BookUpdate
 
 
-class CRUDItem(CRUDBase[Book, BookCreate, BookUpdate]):
+class CRUDBook(CRUDBase[Book, BookCreate, BookUpdate]):
     def create_with_author(
         self, db: Session, *, obj_in: BookCreate, author_id: int
     ) -> Book:
@@ -31,4 +31,4 @@ class CRUDItem(CRUDBase[Book, BookCreate, BookUpdate]):
         )
 
 
-book = CRUDItem(Book)
+book = CRUDBook(Book)
