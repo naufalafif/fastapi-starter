@@ -9,14 +9,10 @@ class BookBase(BaseModel):
     isbn: Optional[str] = None
 
 
-# Properties to receive on item creation
 class BookCreate(BookBase):
     title: str
     isbn: str
 
 
-# Properties to receive on item update
 class BookUpdate(BookBase):
     pass
-
-

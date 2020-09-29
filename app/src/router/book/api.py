@@ -1,8 +1,8 @@
 from fastapi import Depends
 from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
-from src.router.security import is_authenticated
-import src.router.book.object as book_object
+from app.src.router.security import is_authenticated
+import app.src.router.book.object as book_object
 
 router = InferringRouter()
 

@@ -1,4 +1,4 @@
-from src.database.engine import Base
+from app.src.database import Base
 from sqlalchemy import Column, Integer, DateTime, String, Enum
 from sqlalchemy.orm import relationship
 from datetime import datetime

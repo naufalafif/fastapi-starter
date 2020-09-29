@@ -1,4 +1,4 @@
-from src.database.engine import Session
+from app.src.database import Session
 from contextlib import contextmanager
 
 

@@ -1,5 +1,4 @@
 import sys
-
 sys.path = ["", ".."] + sys.path[1:]
 from logging.config import fileConfig
 
@@ -7,8 +6,8 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
-from src.core.config import DB_DSN
-from main import Base
+from app.src.core.config import DB_DSN
+from app.main import Base
 
 config = context.config
 

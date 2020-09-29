@@ -1,5 +1,5 @@
-from src.crud.crud_book import book
-from src.database.session import session_manager
+from app.src.crud import book
+from app.src.database import session_manager
 
 
 def get_books(limit, skip):

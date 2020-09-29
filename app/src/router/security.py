@@ -1,7 +1,7 @@
 import secrets
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
-from src.core.config import BASIC_AUTH_PASSWORD, BASIC_AUTH_USERNAME
+from app.src.core.config import BASIC_AUTH_PASSWORD, BASIC_AUTH_USERNAME
 
 security = HTTPBasic()
 
