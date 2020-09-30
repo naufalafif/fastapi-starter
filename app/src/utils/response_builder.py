@@ -3,7 +3,15 @@ from .json_util import is_valid_json
 
 class ResponseBuilder:
     def __init__(self):
-        self.__response = {"message": None, "data": None, "status": None}
+        self.__response = {"message": None, "data": None, "status": None, "errors": None}
+
+    @property
+    def errors(self):
+        return self.__response['errors']
+
+    @errors.setter
+    def errors(self, value):
+        self.__response['errors'] = value
 
     @property
     def message(self):
