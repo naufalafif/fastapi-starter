@@ -19,5 +19,5 @@ def session_manager():
         session.rollback()
         raise error
     finally:
-        print("closing connection")
+        print("closing session connection")
         session.close()
