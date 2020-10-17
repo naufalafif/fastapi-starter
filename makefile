@@ -3,3 +3,6 @@ run:
 
 build:
 	docker build -t fastapi-starer .
+
+doctest:
+	poetry run xdoctest -m app
