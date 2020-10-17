@@ -6,3 +6,6 @@ build:
 
 doctest:
 	poetry run xdoctest -m app
+
+static-type-check:
+	poetry run mypy app/main.py
