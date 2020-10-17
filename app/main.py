@@ -8,8 +8,18 @@ from starlette.exceptions import HTTPException
 from starlette.middleware.cors import CORSMiddleware
 from app.src.exception.handler import http_error, validation_error
 
-
 def get_application():
+    """
+    generate configured fastapi instance
+
+    :param:
+    :return: FastAPI instance
+
+    Example:
+        >>> app = get_application()
+        >>> isinstance(app, FastAPI)
+        True
+    """
     application = FastAPI(title=config.PROJECT_NAME)
     application.include_router(router)
     application.add_middleware(
@@ -20,8 +30,8 @@ def get_application():
         allow_headers=["*"],
     )
 
-    application.add_exception_handler(HTTPException, http_error.http_error_handler)
-    application.add_exception_handler(RequestValidationError, validation_error.http422_error_handler)
+    # application.add_exception_handler(HTTPException, http_error.http_error_handler)
+    # application.add_exception_handler(RequestValidationError, validation_error.http422_error_handler)
     return application
 
 

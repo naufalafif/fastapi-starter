@@ -3,6 +3,19 @@ from typing import Dict
 
 
 def is_valid_json(object_to_check: Dict):
+    """
+    check is object is valid json.dumps object
+    :param object_to_check:
+    :return: Bool
+
+    Example:
+        >>> valid_object = {"name": "naufal", "age":23}
+        >>> is_valid_json(valid_object)
+        True
+        >>> invalid_object = {"dict": Dict}
+        >>> is_valid_json(invalid_object)
+        False
+    """
     try:
         json.dumps(object_to_check)
         return True

@@ -1,6 +1,7 @@
 from typing import Optional
-
 from pydantic import BaseModel
+from pydantic_sqlalchemy import sqlalchemy_to_pydantic
+from app.src.database.models import books
 
 
 # Shared properties
@@ -16,3 +17,6 @@ class BookCreate(BookBase):
 
 class BookUpdate(BookBase):
     pass
+
+
+BookInDB = sqlalchemy_to_pydantic(books.Book)
