@@ -1,14 +1,19 @@
 from app.src.database import Session
 from contextlib import contextmanager
-
+import sqlalchemy
 
 @contextmanager
 def session_manager():
     """
-    example:
-      with session_manager() as session:
-      result = session.query(db.User).all()
-      print(result)
+    sqlalchemy session with context applied to make sure session closed
+
+    :param:
+    :return:
+
+    Example:
+        >>> from app.src.database.models.books import Book
+        >>> with session_manager() as db:
+        >>>     result = db.query(Book).all()
     """
 
     session = Session()
@@ -21,3 +26,6 @@ def session_manager():
     finally:
         print("closing session connection")
         session.close()
+
+with session_manager() as db:
+    print(db)
