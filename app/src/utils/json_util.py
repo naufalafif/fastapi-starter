@@ -2,7 +2,7 @@ import json
 from typing import Dict
 
 
-def is_valid_json(object_to_check: Dict):
+def is_valid_json(object_to_check: Dict) -> bool:
     """
     check is object is valid json.dumps object
     :param object_to_check:
@@ -23,7 +23,7 @@ def is_valid_json(object_to_check: Dict):
         return False
 
 
-def sql_object_to_dict(sql_object):
+def sql_object_to_dict(sql_object) -> Dict:
     data = {}
     for column in sql_object.__table__.columns:
         data[column.name] = str(getattr(sql_object, column.name))
