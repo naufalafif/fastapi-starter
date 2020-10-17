@@ -26,6 +26,3 @@ def session_manager():
     finally:
         print("closing session connection")
         session.close()
-
-with session_manager() as db:
-    print(db)
